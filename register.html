@@ -23,6 +23,7 @@
 
         input {
             border-color: #3f3d3d;
+            caret-color: #001740;
         }
 
         label {
@@ -100,26 +101,26 @@
             content: "";
             position: absolute;
             height: 2px;
-            width: 92px;
+            width: 22%;
             background-color: gray;
-            left: -107px;
+            left: 7px;
             top: 50%;
             transform: translateY(-50%);
         }
 
         p:first-of-type:after {
             left: unset;
-            right: -107px;
+            right: 7px;
         }
     </style>
 </head>
 
-<body class="flex justify-center items-center h-screen relative">
+<body class="flex justify-center items-center min-h-screen relative">
     <video src="8567119-uhd_4096_2160_25fps.mp4" type="video/mp4" autoplay loop muted></video>
 
-    <div class="border-4 flex flex-col items-center rounded-lg pb-2">
+    <div class="border-4 flex flex-col items-center rounded-lg pb-2 m-2.5">
         <img src="Fauget Class.png" alt="" class="w-96 rounded-2xl">
-        <p class="-mt-8 mb-9 relative">Create Your Account</p>
+        <p class="-mt-8 mb-9 relative w-full text-center">Create Your Account</p>
         <form action="" class="flex flex-col">
             <label for="nm" class="text-xl font-semibold relative">Name :</label>
             <input type="text" name="" id="nm" class="p-1 pl-9 mb-5 w-72 border-solid border-2 rounded-md outline-none"
