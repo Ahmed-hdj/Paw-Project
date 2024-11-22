@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="dist/style.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,400;0,600;1,400;1,600&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,400;0,600;1,400;1,600&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+
+
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            font-family: "Open sans", sans-serif;
+        }
+
+        ul::before {
+            content: "";
+            width: 70%;
+            height: 4px;
+            position: absolute;
+            left: 15%;
+            top: -20px;
+            background-color: #001740;
+
+        }
+
+        ul::after {
+            content: "";
+            font-family: cali;
+            position: absolute;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            left: 50%;
+            border: solid 4px;
+            transform: translateX(-50%);
+            top: -28px;
+        }
+    </style>
+
+</head>
+
+<body class="flex min-h-screen">
+    <div class="w-64 border-r p-6 ">
+        <img src="Fauget Class.png" alt="logo" class="-mt-14">
+        <ul class="relative font-semibold pt-3">
+            <li class="p-2 text-cblue rounded-md cursor-pointer duration-300 pl-13p mb-0p hover:bg-cgr"> <i
+                    class="fa-solid fa-user mr-2  "></i>
+                Profile</li>
+            <li class="p-2 text-cblue rounded-md cursor-pointer duration-300 pl-13p mb-0p hover:bg-cgr"><i
+                    class="fa-solid fa-gear mr-2"></i>
+                Settings</li>
+            <li class="p-2 text-cblue rounded-md cursor-pointer duration-300 pl-13p mb-0p hover:bg-cgr"><i
+                    class="fa-solid fa-file-signature mr-2"></i> Demandes
+            </li>
+            <li class="p-2 text-cblue rounded-md cursor-pointer duration-300 pl-13p mb-0p hover:bg-cgr"><i
+                    class="fa-solid fa-school mr-2"></i>
+                Ajouter Evenement
+            </li>
+            <li class="p-2 text-cblue rounded-md cursor-pointer duration-300 pl-13p mb-0p hover:bg-cgr"><i
+                    class="fa-regular fa-calendar-days mr-2"></i> Ajouter
+                Un Examen
+            </li>
+            <li class="p-2 text-cblue rounded-md cursor-pointer duration-300 pl-13p mb-0p hover:bg-cgr"><i
+                    class="fa-solid fa-envelope mr-2"></i> Email Des Profs
+
+            </li>
+
+        </ul>
+    </div>
+
+
+    <div class="bg-bod flex-grow">
+
+        <div class="bg-white flex justify-between py-1 px-6">
+
+            <div class="flex gap-1 ">
+                <img src="avatar.avif" alt="" class="w-14">
+                <div class="pt-9o">
+                    <p class=" font-medium font-st tracking-wide text-lg leading-none ">Samir</p>
+                    <p class="font-medium font-st tracking-wide text-lg">Djijli</p>
+                </div>
+            </div>
+
+            <i class="fa-regular fa-bell self-center text-2xl"></i>
+
+
+
+        </div>
+
+
+    </div>
+</body>
+
+</html>
