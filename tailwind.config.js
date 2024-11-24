@@ -23,12 +23,14 @@ module.exports = {
                 '7p': '7%',
                 '9p': '9%',
                 '5p': '5%',
+                '34p': '34%'
             },
 
             colors: {
                 cblue: 'rgb(0 34 93)',
                 cgr: '#f6f6f6',
-                bod: "#888"
+                bod: "#888",
+                sp: "#1a4185"
             },
             padding: {
                 '13p': '13px',
@@ -38,8 +40,29 @@ module.exports = {
             fontFamily: {
                 math: ['"Crimson Text"', 'serif'],
                 st: ['math']
-            }
+            },
+            boxShadow: {
+                'lightsh': "0px 0px 20px 0px #00000026"
+            },
+            content: {
+                '': '',
+            },
+            inset: {
+                '40p': '40%',
+            },
+            width: {
+                "60p": "60%",
+                "40k": "40%",
+            },
+            borderWidth: {
+                '0.5': '0.5px', // Add fractional border width
+            },
+            screens: {
+                'max-sm': { max: '639px' }, // Applies below 640px
+                'max-md': { max: '767px' }, // Applies below 768px
+                'max-lg': { max: '1000px' }, // Applies below 1024px
+            },
         },
     },
-    plugins: [],
+    plugins: [require('tailwind-scrollbar')],
 };
