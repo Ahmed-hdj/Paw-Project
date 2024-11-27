@@ -59,7 +59,7 @@ module.exports = {
             },
             screens: {
                 'max-sm': { max: '639px' }, // Applies below 640px
-                'max-md': { max: '767px' }, // Applies below 768px
+                'max-md': { max: '940px' }, // Applies below 768px
                 'max-lg': { max: '1000px' }, // Applies below 1024px
             },
         },

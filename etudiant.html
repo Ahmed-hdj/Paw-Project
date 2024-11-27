@@ -43,25 +43,25 @@
         after:content-[''] after:absolute after:rounded-full after:w-5 after:h-5 after:bg-white after:left-1/2 after:border-4 after:border-cblue after:-translate-x-1/2 after:-top-7">
             <li class="p-2 text-cblue rounded-md cursor-pointer duration-300 pl-13p mb-0p hover:bg-cgr bg-cgr max-lg:text-sm"
                 title="General">
-                <a href="admin.html"><i class="fa-solid fa-file-signature mr-2"></i><span
+                <a href="etudiant.html"><i class="fa-solid fa-file-signature mr-2"></i><span
                         class="max-md:hidden">General</span></a>
             </li>
             <li class="p-2 text-cblue rounded-md cursor-pointer duration-300 pl-13p mb-0p hover:bg-cgr max-lg:text-sm"
                 title="Settigns">
-                <a href="admininscrit.html"><i class="fa-solid fa-circle-user mr-2"></i>
-                    <span class="max-md:hidden">Demande D'inscrit</span> </a>
+                <a href="etudiantdemande.html"><i class="fa-regular fa-file-lines mr-2"></i>
+                    <span class="max-md:hidden">Faire Demande</span> </a>
             </li>
 
             <li class="p-2 text-cblue rounded-md cursor-pointer duration-300 pl-13p mb-0p hover:bg-cgr max-lg:text-sm"
                 title="Ajouter Evenement">
-                <a href="adminevent.html"><i class="fa-solid fa-school mr-2"></i>
-                    <span class="max-md:hidden">Ajouter Evenement</span> </a>
+                <a href="etudiantevent.html"><i class="fa-solid fa-school mr-2"></i>
+                    <span class="max-md:hidden">Evenement</span> </a>
             </li>
 
             </li>
             <li class="p-2 text-cblue rounded-md cursor-pointer duration-300 pl-13p mb-0p hover:bg-cgr max-lg:text-sm"
                 title="Email Des Profs">
-                <a href="adminemail.html"><i class="fa-solid fa-envelope mr-2"></i> <span class="max-md:hidden">Email
+                <a href="etudianemail.html"><i class="fa-solid fa-envelope mr-2"></i> <span class="max-md:hidden">Email
                         Des Profs</span>
                 </a>
 
@@ -80,7 +80,8 @@
 
 
 
-            <a href="dzprogress1@gmail.com" class="self-center text-2xl"><i class="fa-regular fa-bell "></i></a>
+            <a href="mailto:dzprogress1@gmail.com" class="self-center text-2xl"><i
+                    class="fa-regular fa-paper-plane"></i></a>
 
 
 
@@ -120,8 +121,8 @@
                         <div class="flex justify-between items-center">
                             <p class="font-medium text-gray-600">Status :</p>
                             <span
-                                class="inline-block bg-red-100 text-red-700 text-sm font-semibold px-2.5 py-0.5 rounded">
-                                Admin
+                                class="inline-block bg-green-100 text-green-700 text-sm font-semibold px-2.5 py-0.5 rounded">
+                                Etudiant
                             </span>
                         </div>
                     </div>
@@ -131,7 +132,8 @@
 
 
             <span
-                class="relative text-5xl mt-4 font-semibold text-cblue tracking-widest font-math inline-block pb-2 mb-5 before:absolute before:content-[''] before:bottom-0 before:left-0 before:w-[40%] before:h-[5px] before:bg-[#1a4185] after:absolute after:content-[''] after:bottom-0 after:left-[40%] after:w-[60%] after:h-[5px] after:bg-white">Demandes</span>
+                class="relative text-5xl mt-4 font-semibold text-cblue tracking-widest font-math inline-block pb-2 mb-5 before:absolute before:content-[''] before:bottom-0 before:left-0 before:w-[40%] before:h-[5px] before:bg-[#1a4185] after:absolute after:content-[''] after:bottom-0 after:left-[40%] after:w-[60%] after:h-[5px] after:bg-white">Vos
+                Demandes</span>
 
             <div class="overflow-auto max-h-80 scrollbar-track-sp scrollbar scrollbar-thumb-cgr">
 
@@ -144,7 +146,7 @@
                             <th class="border py-[1px] px-[6px] text-cblue">Matricule</th>
                             <th class="border py-[1px] px-[6px] text-cblue">Categorie du Papier</th>
                             <th class="border py-[1px] px-[6px] text-cblue">Status</th>
-                            <th class="border py-[1px] px-[6px] text-cblue">Validation</th>
+                            <th class="border py-[1px] px-[6px] text-cblue">État Commande</th>
                         </tr>
                     </thead>
 
@@ -155,9 +157,10 @@
                             <td class="border p-3 font-semibold">Fichier de virginity</td>
                             <td class="border p-3 font-semibold "> <span
                                     class="bg-red-100 text-red-700 rounded-md p-1">Urgent</span></td>
-                            <td class="border p-3 text-end pr-5"><i
-                                    class="fa-solid fa-circle-xmark text-red-800 text-xl "></i> <i
-                                    class="fa-solid fa-circle-check text-green-600 text-xl ml-1"></i></td>
+                            <td class="border p-3 text-end pr-5 "> <span
+                                    class="bg-yellow-100 text-yellow-700 rounded-md p-1 font-semibold before:content-[''] before:absolute before:w-[6px] before:h-[6px] before:rounded-full before:top-1/2 before:-translate-y-1/2 relative before:left-[5px] pl-[15px] py-[5px] pr-[8px] before:bg-yellow-700">En
+                                    Cours</span>
+                            </td>
 
 
                         </tr>
@@ -167,33 +170,9 @@
                             <td class="border p-3 font-semibold">Fichier de virginity</td>
                             <td class="border p-3 font-semibold "> <span
                                     class="bg-red-100 text-red-700 rounded-md p-1">Urgent</span></td>
-                            <td class="border p-3 text-end pr-5"><i
-                                    class="fa-solid fa-circle-xmark text-red-800 text-xl "></i> <i
-                                    class="fa-solid fa-circle-check text-green-600 text-xl ml-1"></i></td>
-
-
-                        </tr>
-                        <tr>
-                            <td class="border p-3 font-semibold">Faze Nigger</td>
-                            <td class="border p-3 font-semibold">2222106406806</td>
-                            <td class="border p-3 font-semibold">Fichier de virginity</td>
-                            <td class="border p-3 font-semibold "> <span
-                                    class="bg-red-100 text-red-700 rounded-md p-1">Urgent</span></td>
-                            <td class="border p-3 text-end pr-5"><i
-                                    class="fa-solid fa-circle-xmark text-red-800 text-xl "></i> <i
-                                    class="fa-solid fa-circle-check text-green-600 text-xl ml-1"></i></td>
-
-
-                        </tr>
-                        <tr>
-                            <td class="border p-3 font-semibold">Faze Nigger</td>
-                            <td class="border p-3 font-semibold">2222106406806</td>
-                            <td class="border p-3 font-semibold">Fichier de virginity</td>
-                            <td class="border p-3 font-semibold "> <span
-                                    class="bg-red-100 text-red-700 rounded-md p-1">Urgent</span></td>
-                            <td class="border p-3 text-end pr-5"><i
-                                    class="fa-solid fa-circle-xmark text-red-800 text-xl "></i> <i
-                                    class="fa-solid fa-circle-check text-green-600 text-xl ml-1"></i></td>
+                            <td class="border p-3 text-end pr-5 "><span
+                                    class="bg-red-100 text-red-700 rounded-md p-1 font-semibold before:content-[''] before:absolute before:w-[6px] before:h-[6px] before:rounded-full before:top-1/2 before:-translate-y-1/2 relative before:left-[5px] pl-[15px] py-[5px] pr-[8px] before:bg-red-700">Refusé</span>
+                            </td>
 
 
                         </tr>
@@ -203,60 +182,13 @@
                             <td class="border p-3 font-semibold">Fichier de virginity</td>
                             <td class="border p-3 font-semibold "> <span
                                     class="bg-blue-100 text-blue-700 rounded-md p-1">Normal</span></td>
-                            <td class="border p-3 text-end pr-5"><i
-                                    class="fa-solid fa-circle-xmark text-red-800 text-xl "></i> <i
-                                    class="fa-solid fa-circle-check text-green-600 text-xl ml-1"></i></td>
-
-
-                        </tr>
-                        <tr>
-                            <td class="border p-3 font-semibold">Faze Nigger</td>
-                            <td class="border p-3 font-semibold">2222106406806</td>
-                            <td class="border p-3 font-semibold">Fichier de virginity</td>
-                            <td class="border p-3 font-semibold "> <span
-                                    class="bg-blue-100 text-blue-700 rounded-md p-1">Normal</span></td>
-                            <td class="border p-3 text-end pr-5"><i
-                                    class="fa-solid fa-circle-xmark text-red-800 text-xl "></i> <i
-                                    class="fa-solid fa-circle-check text-green-600 text-xl ml-1"></i></td>
-
-
-                        </tr>
-                        <tr>
-                            <td class="border p-3 font-semibold">Faze Nigger</td>
-                            <td class="border p-3 font-semibold">2222106406806</td>
-                            <td class="border p-3 font-semibold">Fichier de virginity</td>
-                            <td class="border p-3 font-semibold "> <span
-                                    class="bg-blue-100 text-blue-700 rounded-md p-1">Normal</span></td>
-                            <td class="border p-3 text-end pr-5"><i
-                                    class="fa-solid fa-circle-xmark text-red-800 text-xl "></i> <i
-                                    class="fa-solid fa-circle-check text-green-600 text-xl ml-1"></i></td>
+                            <td class="border p-3 text-end pr-5 "> <span
+                                    class="bg-green-100 text-green-700 rounded-md p-1 font-semibold before:content-[''] before:absolute before:w-[6px] before:h-[6px] before:rounded-full before:top-1/2 before:-translate-y-1/2 relative before:left-[5px] pl-[15px] py-[5px] pr-[8px] before:bg-green-700">Done</span>
+                            </td>
 
 
                         </tr>
 
-                        <td class="border p-3 font-semibold">Faze Nigger</td>
-                        <td class="border p-3 font-semibold">2222106406806</td>
-                        <td class="border p-3 font-semibold">Fichier de virginity</td>
-                        <td class="border p-3 font-semibold "> <span
-                                class="bg-blue-100 text-blue-700 rounded-md p-1">Normal</span></td>
-                        <td class="border p-3 text-end pr-5"><i
-                                class="fa-solid fa-circle-xmark text-red-800 text-xl "></i> <i
-                                class="fa-solid fa-circle-check text-green-600 text-xl ml-1"></i></td>
-
-
-                        </tr>
-
-                        <td class="border p-3 font-semibold">Faze Nigger</td>
-                        <td class="border p-3 font-semibold">2222106406806</td>
-                        <td class="border p-3 font-semibold">Fichier de virginity</td>
-                        <td class="border p-3 font-semibold "> <span
-                                class="bg-blue-100 text-blue-700 rounded-md p-1">Normal</span></td>
-                        <td class="border p-3 text-end pr-5"><i
-                                class="fa-solid fa-circle-xmark text-red-800 text-xl "></i> <i
-                                class="fa-solid fa-circle-check text-green-600 text-xl ml-1"></i></td>
-
-
-                        </tr>
                     </tbody>
                 </table>
 
