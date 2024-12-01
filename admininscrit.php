@@ -154,53 +154,56 @@ $students_found = $result->num_rows > 0;
 
             <div class="overflow-auto max-h-[680px] scrollbar-track-sp scrollbar scrollbar-thumb-cgr">
 
-            <table class="border-spacing-0 w-full bg-white border-collapse">
+                <table class="border-spacing-0 w-full bg-white border-collapse">
 
-<thead class="sticky top-0 bg-white">
-    <tr>
-        <th class="border py-[8px] px-[6px] text-cblue">Matricule</th>
-        <th class="border py-[8px] px-[6px] text-cblue">Nom</th>
-        <th class="border py-[8px] px-[6px] text-cblue">Prenom</th>
-        <th class="border py-[8px] px-[6px] text-cblue">Validation</th>
-        <th class="border py-[8px] px-[6px] text-cblue">Actions</th>
-    </tr>
-</thead>
+                    <thead class="sticky top-0 bg-white">
+                        <tr>
+                            <th class="border py-[8px] px-[6px] text-cblue">Matricule</th>
+                            <th class="border py-[8px] px-[6px] text-cblue">Nom</th>
+                            <th class="border py-[8px] px-[6px] text-cblue">Prenom</th>
+                            <th class="border py-[8px] px-[6px] text-cblue">Validation</th>
+                            <th class="border py-[8px] px-[6px] text-cblue">Actions</th>
+                        </tr>
+                    </thead>
 
-<tbody>
-    <?php if ($students_found): ?>
-        <?php while ($row = $result->fetch_assoc()): ?>
-            <tr>
-                <td class="border py-[8px] px-[6px]"><?php echo htmlspecialchars($row['id']); ?></td>
-                <td class="border py-[8px] px-[6px]"><?php echo htmlspecialchars($row['first_name']); ?></td>
-                <td class="border py-[8px] px-[6px]"><?php echo htmlspecialchars($row['last_name']); ?></td>
-                <td class="border py-[8px] px-[6px]"><?php echo htmlspecialchars($row['status']); ?></td>
-                <td class="border py-[8px] px-[6px] text-center">
-                    <!-- Form to update status to approved -->
-                    <form method="POST" action="" style="display: inline;">
-                        <input type="hidden" name="user_id" value="<?php echo $row['id']; ?>">
-                        <input type="hidden" name="new_status" value="approved">
-                        <button type="submit" name="update_status" class="status-btn">
-                            <i class="fa-solid fa-circle-check text-green-600 text-xl ml-1"></i>
-                        </button>
-                    </form>
-                    <!-- Form to delete user -->
-                    <form method="POST" action="" style="display: inline;">
-                        <input type="hidden" name="user_id" value="<?php echo $row['id']; ?>">
-                        <button type="submit" name="delete_user" class="delete-btn">
-                            <i class="fa-solid fa-circle-xmark text-red-800 text-xl"></i>
-                        </button>
-                    </form>
-                </td>
-            </tr>
-    
+                    <tbody>
+                        <?php if ($students_found): ?>
+                            <?php while ($row = $result->fetch_assoc()): ?>
+                                <tr>
+                                    <td class="border py-[8px] px-[6px]"><?php echo htmlspecialchars($row['id']); ?></td>
+                                    <td class="border py-[8px] px-[6px]"><?php echo htmlspecialchars($row['first_name']); ?>
+                                    </td>
+                                    <td class="border py-[8px] px-[6px]"><?php echo htmlspecialchars($row['last_name']); ?></td>
+                                    <td class="border py-[8px] px-[6px] bg-yellow-100 text-yellow-700 font-semibold ">
+                                        <?php echo htmlspecialchars($row['status']); ?>
+                                    </td>
+                                    <td class="border py-[8px] px-[6px] text-center">
+                                        <!-- Form to update status to approved -->
+                                        <form method="POST" action="" style="display: inline;">
+                                            <input type="hidden" name="user_id" value="<?php echo $row['id']; ?>">
+                                            <input type="hidden" name="new_status" value="approved">
+                                            <button type="submit" name="update_status" class="status-btn">
+                                                <i class="fa-solid fa-circle-check text-green-600 text-xl ml-1"></i>
+                                            </button>
+                                        </form>
+                                        <!-- Form to delete user -->
+                                        <form method="POST" action="" style="display: inline;">
+                                            <input type="hidden" name="user_id" value="<?php echo $row['id']; ?>">
+                                            <button type="submit" name="delete_user" class="delete-btn">
+                                                <i class="fa-solid fa-circle-xmark text-red-800 text-xl"></i>
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr>
 
-        <?php endwhile; ?>
-    <?php else: ?>
-        <tr>
-            <td colspan="5" style="text-align: center;">No students found</td>
-        </tr>
-    <?php endif; ?>
-</tbody>
+
+                            <?php endwhile; ?>
+                        <?php else: ?>
+                            <tr>
+                                <td colspan="5" style="text-align: center;">No students found</td>
+                            </tr>
+                        <?php endif; ?>
+                    </tbody>
 
                 </table>
 
