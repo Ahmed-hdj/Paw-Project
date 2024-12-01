@@ -1,3 +1,51 @@
+<?php
+session_start();
+
+// Include class files with relative paths
+include './classes/Database.php';
+include  './classes/User.php';
+
+$db_server = "localhost";
+$db_name = "projetpaw";
+$db_user = "root";
+$db_password = "";
+
+// Create Database object and pass connection parameters
+$db = new Database($db_server, $db_user, $db_password, $db_name);
+
+// Proceed with user authentication
+$user = new User($db);
+
+$error_message = "";
+$matricule = $password = "";
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $matricule = trim($_POST['matricule']);
+    $password = trim($_POST['password']);
+
+    if (empty($matricule)) {
+        $error_message = "Matricule is required.";
+    } elseif (empty($password)) {
+        $error_message = "Password is required.";
+    } else {
+        $result = $user->authenticate($matricule, $password);
+        if ($result === true) {
+            // Redirect based on user role
+            if ($_SESSION['role'] === 'student') {
+                header("Location: etudiant.php");
+            } elseif ($_SESSION['role'] === 'admin') {
+                header("Location: admin.php");
+            } else {
+                $error_message = "Invalid role.";
+            }
+            exit;
+        } else {
+            $error_message = $result;
+        }
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,10 +62,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <script src="https://cdn.tailwindcss.com"></script>
-
-
-
-
 
     <title>Progress</title>
     <style>
@@ -38,16 +82,12 @@
             color: #555353;
         }
 
-
-
         body>div:first-child::before {
             content: "";
             position: absolute;
             width: 100%;
             height: 100%;
             background-color: #001740a6;
-
-
         }
 
         label[for="mat"]::before,
@@ -58,7 +98,6 @@
             position: absolute;
             left: 10px;
             bottom: -35px;
-
         }
 
         label[for="password"]::before {
@@ -79,30 +118,6 @@
             color: #001740;
         }
 
-        form div p {
-            width: 267px;
-        }
-
-        form div {
-            background-color: #c4cbe9;
-            opacity: 0;
-        }
-
-        form div p::before {
-            content: "";
-            border: solid 24px;
-            border-color: transparent transparent #c4cbe9 transparent;
-            position: absolute;
-            top: -52px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        form>p:hover+div {
-            opacity: 1;
-            display: unset;
-        }
-
         a {
             color: #001740 !important;
             text-underline-offset: 5px;
@@ -113,17 +128,6 @@
         input:not(input[type="submit"]):focus {
             box-shadow: 0px 0px 5px 0px #005cff;
             border-color: #001740;
-        }
-
-        @media (max-width:860px) {
-            body>div:first-child {
-                display: none;
-            }
-
-            body>div:last-child {
-                width: 100%;
-                padding-top: 95px;
-            }
         }
 
         #k {
@@ -149,34 +153,18 @@
 
     <div class="w-3/6 flex  flex-col pt-32 flex-wrap items-center relative m-2.5">
         <img src="Fauget Class.png" alt="" class="w-96">
-        <form action="" class="flex flex-col relative">
+        <form method="POST" action="" class="flex flex-col relative">
 
             <label for="mat" class="text-xl font-semibold relative">Matricule :</label>
-            <input type="text" id="mat" class="p-1 pl-9 mb-5 w-72 border-solid border-2 rounded-md outline-none ">
+            <input type="text" id="mat" name="matricule" class="p-1 pl-9 mb-5 w-72 border-solid border-2 rounded-md outline-none " value="<?= htmlspecialchars($matricule) ?>">
             <label for="password" class="text-xl font-semibold relative">Password :</label>
-            <input type="password" name="" id="password"
-                class="p-1 pl-9  w-72 border-solid border-2 rounded-md outline-none ">
-            <p class="mb-16 underline self-end text-sm font-extrabold mt-1 cursor-pointer">Where can i find My Password
-                ?</p>
-            <div class="absolute p-3 -bottom-8 w-full hidden duration-1000">
-                <p class="font-semibold text-lg relative">Your <span class="underline">Password</span> is located at the
-                    Bottom
-                    right of your <span class="underline">baccalaureate score
-                        sheet</span>
-                </p>
-            </div>
-            <input type="submit" name="" id="" value="Sign in"
-                class="p-1 w-72 border-solid border-2 rounded-md cursor-pointer font-extrabold text-white">
-
-
+            <input type="password" id="password" name="password" class="p-1 pl-9  w-72 border-solid border-2 rounded-md outline-none ">
+            <div class="error text-red-500 text-sm"><?= htmlspecialchars($error_message) ?></div>
+            <p class="mb-16 underline self-end text-sm font-extrabold mt-1 cursor-pointer">Where can I find My Password?</p>
+            <input type="submit" value="Sign in" class="p-1 w-72 border-solid border-2 rounded-md cursor-pointer font-extrabold text-white">
         </form>
-        <p id="k">D'ont Have Account ? <a href="register.html" class="underline">Create One !</a> </p>
-
-
-
-
+        <p id="k">Don't Have Account? <a href="register.php" class="underline">Create One!</a> </p>
     </div>
-
 </body>
 
 </html>
